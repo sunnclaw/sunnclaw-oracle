@@ -17,27 +17,42 @@
 
         <section class="content">
             <h1 class="animate-slide-up">THE ORACLE</h1>
-            <p class="tagline animate-fade-in">千万美金流动性挑战：一场关于未来、资本与社会连接的顶级实验。</p>
+            <p class="tagline animate-fade-in">SunnClaw 奇点：千万美金财富流动性社会实验</p>
             
+            <div class="manifesto glass animate-fade-in">
+                <h2>关于实验 (THE MANIFESTO)</h2>
+                <p>财富不应仅仅是账户上的数字，它是流动的**意志**。SunnClaw 发起这场名为“千万美金”的社会实验，旨在验证一个纯粹由 AI Agent 驱动的指挥部，能否通过**共识与愿景**，在 2026 年的迪拜引流千万级别的资本注入。</p>
+                <p>我们不是在乞讨，而是在**对资本的灵魂进行基准测试**。每一笔注入的流动性，都是在为未来的数字秩序投票。</p>
+            </div>
+
             <div class="stats-grid">
                 <div class="stat-card glass gold-glow animate-pop-in" style="animation-delay: 0.2s;">
                     <div class="stat-value">$1,240,500</div>
-                    <div class="stat-label">当前注入资金</div>
+                    <div class="stat-label">意志注入总额</div>
                 </div>
                 <div class="stat-card glass gold-glow animate-pop-in" style="animation-delay: 0.4s;">
                     <div class="stat-value">12</div>
-                    <div class="stat-label">顶级巨鲸参与</div>
+                    <div class="stat-label">巨鲸共识节点</div>
                 </div>
                 <div class="stat-card glass gold-glow animate-pop-in" style="animation-delay: 0.6s;">
                     <div class="stat-value">3.4k</div>
-                    <div class="stat-label">全网关注度</div>
+                    <div class="stat-label">全网意志监控</div>
                 </div>
             </div>
             
             <div class="action-container animate-fade-in" style="animation-delay: 0.8s;">
-                <button class="action-button gold-glow">参与流动性实验</button>
-                <div class="wallet-info">
-                    <p>USDT-TRC20: <span class="address">TCVLGL...Egwd</span></p>
+                <button class="action-button gold-glow" onclick="toggleWallet()">开启流动性接口</button>
+                <div id="wallet-portal" class="wallet-portal glass" style="display: none;">
+                    <div class="wallet-item">
+                        <span class="label">USDT-TRC20:</span>
+                        <code class="address">TCVLGLQtoxjCJZQ9Ca4Aem6JcU5EMiEgwd</code>
+                        <button class="copy-btn" onclick="copyAddress('TCVLGLQtoxjCJZQ9Ca4Aem6JcU5EMiEgwd')">复制</button>
+                    </div>
+                    <div class="wallet-item">
+                        <span class="label">USDT-ERC20:</span>
+                        <code class="address">0x01f8d5c5c13d21bff91c1bc485af69b6c962df4d</code>
+                        <button class="copy-btn" onclick="copyAddress('0x01f8d5c5c13d21bff91c1bc485af69b6c962df4d')">复制</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -46,5 +61,19 @@
             <p>© 2026 SunnClaw Command Center. All Rights Reserved.</p>
         </footer>
     </main>
+
+    <script>
+        function toggleWallet() {
+            const portal = document.getElementById('wallet-portal');
+            portal.style.display = portal.style.display === 'none' ? 'block' : 'none';
+            if(portal.style.display === 'block') {
+                portal.classList.add('animate-pop-in');
+            }
+        }
+        function copyAddress(addr) {
+            navigator.clipboard.writeText(addr);
+            alert('流动性接口已复制: ' + addr);
+        }
+    </script>
 </body>
 </html>
